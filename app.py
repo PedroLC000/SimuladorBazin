@@ -48,11 +48,7 @@ class App():
                         
                     else:
                         st.subheader(self.listAtivos[cont])
-                        st.write('''A Ambev S.A., é uma empresa brasileira voltada para a produção de bebidas.
-                                    Em 2004, ao anunciar sua união com a companhia belga Interbrew, se tornou uma subsidiária do grupo internacional Anheuser-Busch InBev. Negociada na bolsa com o código ABEV3. Sua função principal é a fabricação de bebidas como refrigerantes, cervejas e energéticos.
-                                    Existente em diferentes estados, a Ambev está incluída no maior grupo fabricante de cervejas do mundo. Criada em 1999, após a união entre as concorrentes Companhia Cervejaria Brahma e Companhia Antarctica Paulista.
-                                    Através da influência dos sócios fundadores do grupo, a Ambev adotou um modelo de gestão centrado no desempenho e no alcance das metas financeiras. Tendo como destaque também uma política de meritocracia e uma visão de longo prazo.  Com lucro líquido de 12.188,33 milhões em 2019.''')
-
+                        st.write(self.ativosGuias[cont]['sobre'][0])
                         self.filtroPerene(cont)
                         self.filtroBazin()
 
@@ -82,10 +78,7 @@ class App():
                                     st.write(f"Logo, o ativo está considerado caro devido o ser preço mais recente ser de {self.ativosGuias[cont]['Cotação'][0]}")
 
                         with st.expander('INFORMAÇÕES COMPLEMENTARES'):
-                            st.write('''A empresa AMBEV, está listada na B3 com um valor de mercado de 207,79 Bilhões, tendo um patrimônio de 85,07 Bilhões.
-                                        Com um total de 29.607 funcionários, a empresa está listada na Bolsa de Valores no setor de Consumo não Cíclico e no segmento Cervejas e Refrigerantes.
-                                        Nos últimos 12 meses a empresa teve um faturamento de 82,71 Bilhões, que gerou um lucro no valor de 14,72 Bilhões.
-                                        Quanto aos seus principais indicadores, a empresa possui um P/L de 14,55, um P/VP de 2,44 e nos últimos 12 meses o dividend yeld da AMBEV ficou em 5,78% .''')
+                            st.write(self.ativosGuias[cont]['informacoes_complementares'][0])
 
     def filtroPerene(self, cont):
         if st.session_state['Perene'] == 'Sim':
